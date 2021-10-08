@@ -26,6 +26,10 @@ export const createClass = async(req: Request, res: Response)=>{
         throw new Error('Os modules são de 1 a 7, ou 0 caso as aulas da turma não tenham começado.')
       }
 
+      /*const subject = await con.raw(`select * from class`)
+      if(subject[0].length === 7){
+        throw new Error('O quadro de turmas já está completo.')
+      }*/
 
       await con('class').insert({
         name,
@@ -34,7 +38,7 @@ export const createClass = async(req: Request, res: Response)=>{
         module
       })
 
-      res.send('Class created')
+      res.end()
 
     }catch(e: any){
       res.status(400).send({message: e.message || e.sqlMessage})
