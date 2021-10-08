@@ -1,11 +1,13 @@
 import {useContext, useState} from "react"
 import {useHistory} from "react-router-dom"
 import axios from "axios"
-import styled from "styled-components"
-import Context from "../global/Context"
-import {converDate} from "../utils/utils"
+import Context from "../../global/Context"
+import {converDate} from "../../utils/utils"
+import {Container} from "./styled"
 
 
+
+//=======================================Component begin====================
 const RegistStudent = ()=>{
     const history = useHistory()
     const {states} = useContext(Context)
@@ -15,9 +17,10 @@ const RegistStudent = ()=>{
       name:'',
       email:'',
       birth:'',
-      //Destinado a outra reuisição
+      //Destinado a outra requisição
       hobbies:''
     })
+
 
     const onChange = (e)=>{
       const {name, value} = e.target
@@ -49,7 +52,7 @@ console.log(id)
             <h3>Escolha uma turma e um um turno.</h3>
             <button onClick={()=> history.push('/')}>Voltar</button>
             </header>
-            <span>Integral
+            <div className='classes-container'>Integral
             {classes && classes.map(cls=>{
               return<div key={cls.id}>
                       <p>
@@ -64,9 +67,7 @@ console.log(id)
                       </p>
                     </div>
             })}
-            </span>
-
-            <span>Noturna
+            Noturna
             {classes && classes.map(cls=>{
               return<div key={cls.id}>
                       <p>
@@ -81,7 +82,7 @@ console.log(id)
                       </p>
                     </div>
             })}
-            </span>
+            </div>
 
             <form onSubmit={regist}>
               <input type='text' name='name' value={form.name} onChange={onChange}
