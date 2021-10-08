@@ -5,9 +5,14 @@ export const createStudent = async(req: Request, res: Response)=>{
     try{
 
       const {name, email, birth, classId} = req.body
+
+      /*
+      O navegador já faz a inversão de data
       const date = birth.split("/")
       const converted = `${date[2]}-${date[1]}-${date[0]}`
-      const millisecondsAge = Date.now() - new Date(converted).getTime()
+      */
+
+      const millisecondsAge = Date.now() - new Date(birth).getTime()
       const age = Math.floor(millisecondsAge / 1000 / 60 / 60 / 24 / 365)
 
       if(!name || !email || !birth){
@@ -26,7 +31,7 @@ export const createStudent = async(req: Request, res: Response)=>{
       await con("students").insert({
         name,
         email,
-        birth: converted,
+        birth,
         class_id: classId
       })
 res.end()
