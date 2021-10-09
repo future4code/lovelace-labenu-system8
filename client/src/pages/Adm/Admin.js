@@ -2,6 +2,8 @@ import {useEffect, useState, useContext} from "react"
 import Context from "../../global/Context"
 import {useHistory} from "react-router-dom"
 import axios from "axios"
+import {Container, Subjects, Title, Day,
+Night, Inputs} from "./styled"
 
 
 const Admin = ()=>{
@@ -22,7 +24,7 @@ const Admin = ()=>{
       setForm({...form, [name]: value})
     }
 
-console.log(form)
+
     useEffect(()=>{
       const token = localStorage.getItem('token')
 
@@ -56,29 +58,32 @@ console.log(form)
         alert('É preciso separar as especialidades por virgula')
       }else{
         axios.post("http://localhost:3003/teacher", body).then(res=>{
-          console.log(res.data)
-          alert("BATEU!")
+          alert(`${form.name} adicionado com sucesso.`)
         }).catch(e=>{
           alert(e.response.data.message)
         })
-      }      
+      }
     }
 
 //=============================================Teacher========================================
-    return<>
+    return<Container>
             <header>
-              <h3>Adicionar professor e disciplina à turma</h3>
-              <button onClick={logout}>Logout</button>
-              <button onClick={()=> history.push('/')} >Voltar</button>
+              <div className='head-title'>Adicionar professor e disciplina à turma</div>
+              <div>
+                <button className='back' onClick={()=> history.push('/')} >Voltar</button>
+                <button className='logout' onClick={logout}>Logout</button>
+              </div>
             </header>
-            <form onSubmit={addTecher} >
+            <Inputs onSubmit={addTecher} >
               <input type='text' name='name' value={form.name} onChange={onChange}
                placeholder='Nome completo' required/>
               <input type='email' name='email' value={form.email} onChange={onChange}
                placeholder='E-mail' required/>
+              Data de nascimento:
               <input type='date' name='birth' value={form.value} onChange={onChange}
                required/>
-              <textarea name='skills' value={form.skills} onChange={onChange}/>
+              <textarea name='skills' value={form.skills} onChange={onChange}
+               placeholder='Especialidades(separadas por virgula)'/>
               Disciplina:
               <select name='subject' value={form.subject} onChange={onChange}>
                 {classes && classes.map(cls=>{
@@ -86,8 +91,8 @@ console.log(form)
                 })}
               </select>
               <button>Adicionar</button>
-            </form>
-          </>
+            </Inputs>
+          </Container>
 }
 
 export default Admin

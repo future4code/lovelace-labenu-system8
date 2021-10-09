@@ -43,8 +43,7 @@ const RegistStudent = ()=>{
           classId: id
         }
           axios.post("http://localhost:3003/student", body).then(res=>{
-            console.log(res.data)
-            alert("BATEU!")
+            alert(`${form.name} registrado.`)
           }).catch(e=>{
             alert(e.response.data.message)
           })
@@ -54,7 +53,7 @@ const RegistStudent = ()=>{
 //============================Render===========================================
     return<Container>
             <header>
-              <div className='head-title'>Preencha o formulário com seus dados.</div>
+              <li className='head-title'>Preencha o formulário com seus dados.</li>
               <button onClick={()=> history.push('/')}>Voltar</button>
             </header>
             <Inputs onSubmit={regist}>
@@ -69,6 +68,7 @@ const RegistStudent = ()=>{
                placeholder='Hobbies. Separados por virgula(opcional)'/>
               <button>Inscrever-se</button>
             </Inputs>
+            <li className='section-title'>Escolha uma turma e um turno</li>
             <Title>
               <span >Integral</span>
               <span style={{marginRight:'130px'}}>Noturna</span>
