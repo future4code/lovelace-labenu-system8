@@ -1,6 +1,5 @@
 import styled from "styled-components"
 
-
 export const Container = styled.div`
     margin: 15px;
     header{
@@ -13,10 +12,9 @@ export const Container = styled.div`
         font-size: 1.5rem;
         margin-left: -15px;
       }
-    }
-    .section-title{
-      font-size: 1.5rem;
-      margin-bottom: 5vh;
+      .logout{
+        margin-left: 10px;
+      }
     }
 `
 export const Inputs = styled.form`
@@ -32,30 +30,7 @@ export const Inputs = styled.form`
     input{
       height: 25px;
     }
-`
-export const Subjects = styled.div`
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
-`
-export const Title = styled.div`
-    display: flex;
-    justify-content: space-between;
-    width: 70vw;
-    margin: auto;
-    font-size: 1.2rem;
-`
-export const Day = styled.div`
-    border-right: 1px solid;
-    width: 50vw;
-    span{
-      cursor: pointer;
-    }
-`
-export const Night = styled.div`
-    width: 60vw;
-    margin-left: 30px;
-    span{
-      cursor: pointer;
+    select{
+      height: 30px;
     }
 `

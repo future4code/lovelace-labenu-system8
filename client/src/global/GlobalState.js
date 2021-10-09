@@ -12,11 +12,9 @@ const GlobalState = (props)=>{
 
     const getClasses = ()=>{
       axios.get("http://localhost:3003/class").then(res=>{
-        console.log(res.data)
         setClasses(res.data)
       }).catch(e=>{
-        console.log(e.response)
-        alert("algo deu errado")
+        alert("Algo deu errado\n"+e.response)
       })
     }
 
