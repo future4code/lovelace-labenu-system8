@@ -4,6 +4,8 @@ import Home from "../pages/Home/Home"
 import RegistStudent from "../pages/Regist/RegistStudent"
 import Login from "../pages/Login/Login"
 import Admin from "../pages/Adm/Admin"
+import Day from "../components/Day"
+import Night from "../components/Night"
 
 
 const Routes = ()=>{
@@ -20,6 +22,12 @@ const Routes = ()=>{
             </Route>
             <Route exact path='/admin'>
               <Admin/>
+            </Route>
+            <Route exact path='/day'>
+              <Day/>
+            </Route>
+            <Route exact path='/night'>
+              <Night/>
             </Route>
           </GlobalState>
         </Switch>

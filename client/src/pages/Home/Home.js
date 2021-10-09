@@ -1,9 +1,10 @@
 import {useHistory, Link} from "react-router-dom"
 import styled from "styled-components"
 
+
 const Container = styled.div`
     text-align: center;
-    margin-top: 30vh;
+    margin-top: 10vh;
     .right{
       margin-right: 20px;
     }
@@ -11,7 +12,6 @@ const Container = styled.div`
       margin-left: 20px;
     }
 `
-
 
 const Home = ()=>{
     const history = useHistory()

@@ -2,12 +2,30 @@ import styled from "styled-components"
 
 
 export const Container = styled.div`
-
+    margin: 15px;
     header{
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 3vh;
       padding: 10px;
+      .head-title{
+        font-size: 1.5rem;
+        margin-left: -15px;
+      }
+    }
+`
+export const Inputs = styled.form`
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    align-items: left;
+    gap: 10px;
+    input[type=date]{
+
+    }
+    input{
+      height: 25px;
     }
 `
 export const Subjects = styled.div`
@@ -20,17 +38,19 @@ export const Title = styled.div`
     justify-content: space-between;
     width: 70vw;
     margin: auto;
+    font-size: 1.5rem;
 `
 export const Day = styled.div`
     border-right: 1px solid;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     width: 50vw;
+    span{
+      cursor: pointer;
+    }
 `
 export const Night = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     width: 60vw;
     margin-left: 30px;
-
+    span{
+      cursor: pointer;
+    }
 `

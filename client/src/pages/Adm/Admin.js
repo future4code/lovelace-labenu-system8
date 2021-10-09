@@ -54,14 +54,14 @@ console.log(form)
 
       if(form.skills.indexOf(',') === -1){
         alert('É preciso separar as especialidades por virgula')
-      }
-
-      axios.post("http://localhost:3003/teacher", body).then(res=>{
-        console.log(res.data)
-        alert("BATEU!")
-      }).catch(e=>{
-        alert(e.response.data.message)
-      })
+      }else{
+        axios.post("http://localhost:3003/teacher", body).then(res=>{
+          console.log(res.data)
+          alert("BATEU!")
+        }).catch(e=>{
+          alert(e.response.data.message)
+        })
+      }      
     }
 
 //=============================================Teacher========================================
