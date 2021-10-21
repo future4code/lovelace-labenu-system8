@@ -1,0 +1,34 @@
+{
+  "name": "system8",
+  "version": "1.0.0",
+  "description": "Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização.",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsnd --transpile-only --ignore-watch node_modules ./src/index.ts",
+    "test": "tsnd --transpile-only ./src/data/connection.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/future4code/lovelace-labenu-system8.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/future4code/lovelace-labenu-system8/issues"
+  },
+  "homepage": "https://github.com/future4code/lovelace-labenu-system8#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "knex": "^0.95.11",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.10.3",
+    "ts-node-dev": "^1.1.8"
+  }
+}
